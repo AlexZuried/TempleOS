@@ -1,0 +1,18 @@
+[Unit]
+Description=NeonBridge Host Daemon for TempleOS Networking
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/neonbridge/bin/neon_bridge
+Restart=always
+User=root
+Group=root
+
+# Security hardening
+NoNewPrivileges=false
+ProtectSystem=false
+ProtectHome=false
+
+[Install]
+WantedBy=multi-user.target
